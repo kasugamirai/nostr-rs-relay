@@ -90,7 +90,7 @@ pub trait NostrRepo: Send + Sync {
 
 // Current time, with a slight forward jitter in seconds
 pub(crate) fn now_jitter(sec: u64) -> u64 {
-    // random time between now, and 10min in future.
+    // random time between now, and 10min in the future.
     let mut rng = rand::thread_rng();
     let jitter_amount = rng.gen_range(0..sec);
     let now = unix_time();

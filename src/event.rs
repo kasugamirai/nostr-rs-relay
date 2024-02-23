@@ -58,7 +58,7 @@ pub struct Event {
     pub tagidx: Option<HashMap<char, HashSet<String>>>,
 }
 
-/// Simple tag type for array of array of strings.
+/// Simple tag type for  array of strings.
 type Tag = Vec<Vec<String>>;
 
 /// Deserializer that ensures we always have a [`Tag`].
@@ -690,7 +690,7 @@ mod tests {
     #[test]
     fn param_replaceable_value_case_4b() {
         // Variation of #4 with
-        // NIP case #4: "tags":[["d","not empty"],["d",""]]: only first d tag is considered
+        // NIP case #4: "tags":[["d","not empty"],[["d",""]]: only first d tag is considered
         let mut event = Event::simple_event();
         event.kind = 30000;
         event.tags = vec![
